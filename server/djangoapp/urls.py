@@ -20,6 +20,8 @@ urlpatterns = [
     path('login/', views.login_request, name='login'),
     
     path('logout/', views.logout_request, name='logout'),
+
+    path(route='dealer/<int:id>', view=views.get_dealer_details, name='dealer_details'),
     
 
     
