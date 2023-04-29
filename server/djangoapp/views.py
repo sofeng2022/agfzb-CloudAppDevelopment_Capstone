@@ -84,7 +84,7 @@ def get_dealerships(request):
 
 
 # Create a `get_dealer_details` view to render the reviews of a dealer
-def get_dealer_details(request, dealer_id):
+def get_dealer_details(request, id):
 
     if request.method == "GET":
         context = {}
@@ -129,9 +129,10 @@ def add_review(request, id):
                 if request.POST["purchasecheck"] == 'on':
                     payload["purchase"] = True
             payload["purchase_date"] = request.POST["purchasedate"]
-            payload["car_make"] = car.make.name  
-            payload["car_model"] = car.name
-            payload["car_year"] = int(car.year.strftime("%Y"))
+            payload["carmake"] = car.name  
+            payload["carmodel"] = car.name
+           
+            
 
             new_payload = {}
             new_payload["review"] = payload
